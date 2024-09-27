@@ -1,14 +1,27 @@
-chmod +x brave-install.sh
-./brave-install.sh
+#!/bin/bash
 
-chmod +x tmux-install.sh
-./tmux-install.sh
+mkdir ~/Projects
 
-chmod +x vim-config.sh
-./vim-config.sh
+# List of installation scripts
+scripts=(
+    "brave-install.sh"
+    "tmux-install.sh"
+    "vim-config.sh"
+    "zsh-install.sh"
+    "vscode-install.sh"
+    "git-install.sh"
+    "nodejs-install.sh"
+    "pnpm-install.sh"
+    "rust-install.sh"
+    "create-links.sh"
+)
 
-chmod +x zsh-install.sh
-./zsh-install.sh
+# Loop through each script
+for script in "${scripts[@]}"; do
+    # Make the script executable and run it with sudo
+    chmod +x "$script"
+    sudo ./"$script"
+done
 
-chmod +x vscode-install.sh
-./vscode-install.sh
+echo "\nAll scripts executed."
+

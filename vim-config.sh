@@ -1,2 +1,2 @@
-sudo apt install vim
+sudo apt install vim -y
 echo "set number" > ~/.vimrc
